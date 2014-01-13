@@ -1,0 +1,172 @@
+@charset "UTF-8";
+/* CSS Document */
+/*html { 
+	background: url(../images/mainBG.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color:#06161D;
+}*/
+
+#defaultPage { 
+	background: url(../images/mainBG.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color:#06161D;
+}
+
+#splashPage { 
+	background: url(../images/splashbg.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color:#06161D;
+}
+
+#loginPage { 
+	background: url(../images/machineBG.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color:#06161D;
+}
+
+#selectMachine { 
+	background: url(../images/machineBG.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color:#06161D;
+}
+
+#syncDrills { 
+	background: url(../images/machineBG.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color:#06161D;
+}
+
+body {
+	margin:0px;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:#FFFFFF;
+}
+
+a {
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+a.hover {
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+a.visited {
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+#navButtonLeft {
+	float:left;
+}
+
+#navButtonRight {
+	float:right;
+}
+
+#screenLabel {
+	margin-top:15px; 
+	font-size:1.4em; 
+	font-family:HelveticaNeue-CondensedBold;
+}
+
+#drillName {
+	margin-top:8px;
+	font-size:1.1em;
+	font-weight:100;
+}
+
+#stausGroupSmall {
+	height:49px;
+	font-size:1.5em;
+	font-weight:100;
+	letter-spacing:-1px;
+	vertical-align:middle;
+	margin-top:15px;
+}
+
+#stausGroupLarge {
+	height:49px;
+	font-size:1.5em;
+	font-weight:100;
+	letter-spacing:-1px;
+	vertical-align:middle;
+	margin-top:15px;
+}
+
+#stausGroupDelay {
+	height:49px;
+	font-size:1.9em;
+	font-weight:100;
+	letter-spacing:-1px;
+	vertical-align:middle;
+	margin-top:15px;
+}
+
+.bar {
+	background:url(../images/bar.png) repeat;
+	height:50px;	
+	margin:0px;
+	padding:0px;
+}
+
+.stepIndicator {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #CF252F), color-stop(1, #f70c00));
+	background:-moz-linear-gradient(top, #CF252F 5%, #f70c00 100%);
+	background:-webkit-linear-gradient(top, #CF252F 5%, #f70c00 100%);
+	background:-o-linear-gradient(top, #CF252F 5%, #f70c00 100%);
+	background:-ms-linear-gradient(top, #CF252F 5%, #f70c00 100%);
+	background:linear-gradient(to bottom, #CF252F 5%, #f70c00 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#CF252F', endColorstr='#f70c00',GradientType=0);
+	background-color:#CF252F;
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:12px;
+	font-weight:bold;
+	padding:3px 7px;
+	text-decoration:none;
+	float:left; 
+	margin-left:8px; 
+	margin-top:-2px;
+}
+
+.username {
+     background-color: #80DB00;
+	 border-radius:0px;
+     border: none;
+     font-size: 1em;
+     padding: 5px;
+	 -webkit-appearance:none;
+}
+
+.password {
+     background-color: #FFFFFF;
+	 border-radius:0px;
+	 border: none;
+     font-size: 1em;
+     padding: 5px;
+	 -webkit-appearance:none;
+}

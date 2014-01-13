@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">appMobi Plugin</string>
+	
+	<!-- module support -->
+	<string-array name="modules">
+		<item>com.fortytwo.mdns_plugin.MDNS_PluginModule</item>
+	</string-array>
+	
+	<string-array name="javascripts">
+		<item>mdns_plugin</item>
+	</string-array>
+	
+</resources>

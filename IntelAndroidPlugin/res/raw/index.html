@@ -1,0 +1,131 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TOCA-Select Machine</title>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<link href="css/toca-mobile.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" charset="utf-8" src="_appMobi/appmobi.js"></script>
+<script type="text/javascript" charset="utf-8" src="_appMobi/mdns_plugin.js"></script>
+<script type="text/javascript">
+ 		function onLoad()
+		{
+			//alert('onload');
+			var serviceName;
+			var serviceHost;
+			var servicePort;
+			var json;
+			var service;
+			
+			document.addEventListener("appMobi.device.ready",onappMobi,false);
+			document.addEventListener("mdns_plugin.ready",onReady,false);
+			document.addEventListener("mdns_plugin.workstart",onStart,false);
+			document.addEventListener("mdns_plugin.workstop",onStop,false);
+		}   
+    
+		function onappMobi()
+		{
+			//alert('appMobi ready');
+		}
+
+		function onStart()
+		{
+			populateData(json);
+            //updateList(json);
+		}
+		
+		function populateData() {
+			var jsonp = JSON.parse(json);
+			i=0;
+			var content = document.getElementById('machineData').innerHTML;
+			
+			machinelist = content;
+			
+			if (content == '') {
+			//machinelist = '';
+			} 
+			while(i<jsonp.services.length) {
+			//alert(jsonp.services[i].serviceName);
+			machinelist += ' <tr height="53">'
+            +'<td width="100%"><div style="border-style:solid;border-width:3px;border-color:#FFFFFF;background-color:#8CF330;'
+			+'padding:4px;font-family:HelveticaNeue-CondensedBold; font-size:1.4em; font-weight:bold;" align="center">'
+            +'<a href="#" onclick="resolve(\''+jsonp.services[i].serviceName+'\');">'+jsonp.services[i].serviceName+'</a></div></td>';
+			machinelist += '</tr>';
+			
+			
+			i++;
+			}
+			//machinelist += '</table>';
+			//if (i==1) {
+			//connect directly to only t2
+			//} else {
+
+			document.getElementById('machineData').innerHTML = machinelist; //display list of multiple t2s
+			//}
+		}
+
+    
+        function updateList(json) {
+			var jsonp = JSON.parse(json);
+			
+            alert(JSON.stringify(jsonp));
+        }
+    
+		function onStop()
+		{
+			//alert('work stopped');
+			var jsonp = JSON.parse(service);
+			//alert(JSON.stringify(jsonp));
+			//alert(jsonp.services[0].serviceHost+":"+jsonp.services[0].servicePort);
+			var tocaService = jsonp.services[0].serviceHost+":"+jsonp.services[0].servicePort;
+			localStorage.setItem("tocaService", tocaService);
+			window.location = "login.html";
+		}
+
+		function onReady()
+		{
+			alert('mdns_plugin ready');
+			
+            MDNS_Plugin.worker.startWork('O', false);
+		}
+		
+		function resolve(serviceName)
+		{
+		MDNS_Plugin.worker.startWork(serviceName, true);
+		}
+</script>
+</head> 
+
+<body id="selectMachine" onload="onLoad();"> 
+
+<div id="header">
+    <div id="navButtonLeft">
+    <!--    
+    <a href="main.html"><img src="images/smsheild.png" width="47" height="60" alt="Main" style="margin-top:-18px"/></a>
+    -->    
+	</div>
+  	<div id="navButtonRight">
+    <!--    
+    <a href="main.html"><img src="images/backarrow.png" width="47" height="60" alt="Back"  style="margin-top:-18px"/></a>
+    -->  	
+	</div>
+</div>
+
+<div id="screenLabel" align="center">
+	SELECT MACHINE
+</div>
+
+
+<div style="margin-top:15px; margin-bottom:30px" align="center">
+</div>
+
+
+<div align="center">
+  <div style="width:95%;" align="center">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" id="machineData">
+  </table>
+  </div>
+
+</body>
+</html>
+
