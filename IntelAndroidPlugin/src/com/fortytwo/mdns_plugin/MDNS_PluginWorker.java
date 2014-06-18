@@ -133,6 +133,11 @@ public void success() {
 	            @Override
 	            public void onServiceLost(NsdServiceInfo service) {
 	                Log.e(TAG, "service lost" + service);
+	                
+	                String serviceName = service.getServiceName();
+	                   
+                    String json = "{\"services\":[{\"serviceName\":\""+serviceName+"\"}]}";
+	                webview.loadUrl("javascript:var json = '"+json+"';var ev = document.createEvent('Events');ev.initEvent('mdns_plugin.removeservice',true,true);document.dispatchEvent(ev);");
 	                if (mService == service) {
 	                    mService = null;
 	                }
